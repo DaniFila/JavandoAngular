@@ -1,0 +1,37 @@
+<div class="mostri-container" >
+  <h2>Elenco Stivali</h2>
+
+  <p *ngIf="!stivali.length" class="empty-msg">
+    Nessun stivale da mostrare.
+  </p>
+
+  <table *ngIf="stivali.length" class="mostri-table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Costo</th>
+      <th>Misura</th>
+      <th>Materiale</th>
+      <th>altezza</th>
+      <th>impermeabile</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let m of stivali; index as i">
+      <td class="index"><button (click)="mostraDettaglioStivale(i)">{{ i + 1 }}</button></td>
+      <td>{{ m.costo }}</td>
+      <td>{{ m.misura }}</td>
+      <td>
+          <span class="danger">
+            {{ m.materiale }}
+          </span>
+      </td>
+      <td>{{ m.altezza }}</td>
+      <td>{{ m.impermeabile ? 'si' : 'no' }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

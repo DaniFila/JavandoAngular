@@ -1,0 +1,53 @@
+<!-- drago-form.component.html -->
+<form class="drago-form">
+  <h2 class="form-title">FORM STIVALE</h2>
+
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="stivaleDaInserire.costo"
+    placeholder="Costo"
+    name="costo"
+  >
+
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="stivaleDaInserire.misura"
+    placeholder="Misura"
+    name="misura"
+  >
+
+  <select
+    class="form-control"
+    [(ngModel)]="stivaleDaInserire.materiale"
+    name="materiale"
+    required
+  >
+    <option disabled value="">MATERIALE</option>
+    <option *ngFor="let per of possibiliMateriali" [value]="per">{{ per }}</option>
+  </select>
+
+  <select
+    class="form-control"
+    [(ngModel)]="stivaleDaInserire.altezza"
+    name="altezza"
+    required
+  >
+    <option disabled value="">ALTEZZA</option>
+    <option *ngFor="let el of possibiliAltezze" [value]="el">{{ el }}</option>
+  </select>
+
+  <label class="toggle">
+    <input
+      type="checkbox"
+      class="toggle-input"
+      [(ngModel)]="stivaleDaInserire.impermeabile"
+      name="impermeabile"
+    >
+    <span class="toggle-track"></span>
+    <span class="toggle-text">impermeabile</span>
+  </label>
+
+  <button (click)="salva()" class="submit-btn">SALVA</button>
+</form>
