@@ -1,4 +1,4 @@
+<a routerLink="/tabella">Tabella</a> &nbsp;&nbsp;&nbsp;
+<a routerLink="/form">Form</a>
 
-<app-form-stivali (stivaleCreato)="ricaricaArray()" ></app-form-stivali>
-<app-tabella-stivali [stivali]="stivaliInApp" (mostraDettaglio)="mostraStivale($event)"></app-tabella-stivali>
-<app-dettaglio-stivale [stivale]="stivaleSelected"></app-dettaglio-stivale>
+<router-outlet></router-outlet>

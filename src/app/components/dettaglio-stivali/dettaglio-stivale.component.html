@@ -1,20 +1,20 @@
 
-<div *ngIf="stivale">
+<div *ngIf="getStivale()">
   <article class="card">
     <header>
       <h2>
-        {{ stivale.costo }} €
-        <small *ngIf="stivale.id"> ID {{ stivale.id }}</small>
+        {{ getStivale().costo }} €
+        <small *ngIf="getStivale().id"> ID {{ getStivale().id }}</small>
       </h2>
     </header>
 
     <ul>
-      <li><strong>Misura:</strong> {{ stivale.misura }}</li>
-      <li><strong>Materiale:</strong> {{ stivale.materiale }}</li>
-      <li><strong>Altezza:</strong> {{ stivale.altezza }}</li>
-      <li><strong>Impermeabile:</strong> {{ stivale.impermeabile ? 'Sì' : 'No' }}</li>
+      <li><strong>Misura:</strong> {{ getStivale().misura }}</li>
+      <li><strong>Materiale:</strong> {{ getStivale().materiale }}</li>
+      <li><strong>Altezza:</strong> {{ getStivale().altezza }}</li>
+      <li><strong>Impermeabile:</strong> {{ getStivale().impermeabile ? 'Sì' : 'No' }}</li>
     </ul>
   </article>
 </div>
 
-<p *ngIf="!stivale" class="no-selection">Nessun stivale selezionato</p>
+<p *ngIf="!getStivale()" class="no-selection">Nessun stivale selezionato</p>

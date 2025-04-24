@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Stivale} from '../../model/stivale';
 import {NgIf} from '@angular/common';
+import {StatoGlobaleService} from '../../stato/stato-globale.service';
 
 @Component({
   selector: 'app-dettaglio-stivale',
@@ -12,7 +13,15 @@ import {NgIf} from '@angular/common';
 })
 export class DettaglioStivaleComponent {
 
-  @Input() stivale:Stivale | null = null;
+  constructor(private stato:StatoGlobaleService) {
+  }
+
+  @Input() pos:number=-1;
+
+  getStivale()
+  {
+    return this.stato.stivaliInApp[this.pos];
+  }
 
 
 }

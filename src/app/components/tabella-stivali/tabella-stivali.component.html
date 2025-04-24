@@ -1,11 +1,11 @@
 <div class="mostri-container" >
   <h2>Elenco Stivali</h2>
 
-  <p *ngIf="!stivali.length" class="empty-msg">
+  <p *ngIf="!stato.stivaliInApp.length" class="empty-msg">
     Nessun stivale da mostrare.
   </p>
 
-  <table *ngIf="stivali.length" class="mostri-table">
+  <table *ngIf="stato.stivaliInApp.length" class="mostri-table">
     <thead>
     <tr>
       <th>#</th>
@@ -18,8 +18,8 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let m of stivali; index as i">
-      <td class="index"><button (click)="mostraDettaglioStivale(i)">{{ i + 1 }}</button></td>
+    <tr *ngFor="let m of stato.stivaliInApp; index as i">
+      <td class="index"><a [routerLink]="['/dettaglio',i]">{{ i }}</a></td>
       <td>{{ m.costo }}</td>
       <td>{{ m.misura }}</td>
       <td>
